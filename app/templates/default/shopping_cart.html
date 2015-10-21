@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+
+
+{% block content %}
+	{% for product in products %}
+		<form action="{{ url_for('.post_item') }}" method="POST">
+			<button type="submit"> Add </button><input type="text" name="prodName" value="{{ product.name }}" /><input type="text" name="prodPrice" value="{{ product.price }}" />
+		</form>
+	{% endfor %}
+{% endblock %}
+
+{% block resultBlock %}
+	<h1>Shopping cart<h1>
+{% endblock %}
